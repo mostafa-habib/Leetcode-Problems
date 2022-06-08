@@ -3,14 +3,11 @@
  * @return {number}
  */
 var removePalindromeSub = function(s) {
-    let i = 0;
-    let j = s.length - 1;
-
-    while (i < j) {
-        if (s[i++] !== s[j--]) {
-            return 2;
-        }
-    }
-
-    return 1;
-};
+   if(s === s.split('').reverse().join('')) {
+       return 1;
+   }
+   else {
+       return 2;
+   }
+    
+}
