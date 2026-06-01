@@ -2,16 +2,16 @@
  * @param {number[]} cost
  * @return {number}
  */
+
 var minimumCost = function(cost) {
-    const arr = cost.sort((a, b) => a - b);
-    let i = arr.length -1;
-    let sum = 0;
-    while(i >= 0) {
-        if(arr[i - 1])
-            sum += arr[i] + arr[i - 1];
-        else 
-        sum += arr[i];
-        i -=3;
+    cost.sort((a, b) => b - a);
+    
+    let totalCost = 0;
+    
+    for (let i = 0; i < cost.length; i++) {
+        if ((i + 1) % 3 === 0) continue; 
+        totalCost += cost[i];
     }
-    return sum;
+    
+    return totalCost;
 };
